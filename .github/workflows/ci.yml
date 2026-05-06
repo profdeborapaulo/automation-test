@@ -1,0 +1,25 @@
+name: CI-validação
+
+on:
+    push:
+        branches: [main]
+    pull_request: 
+
+permissions:
+    contents: read
+    pull-requests: write
+
+jobs:
+    validade-workflow:
+        runs-on: ubuntu-22.04
+        steps:
+            - uses: actions/checkout@v5
+
+            - name: Run actionlint
+              uses: raven-actions/actionlint@v2
+
+            - name: Upload logs
+              uses: actions/upload-artifact@v4
+              with:
+                name: ci-logs
+                path: .
