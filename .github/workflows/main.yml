@@ -2,8 +2,8 @@ name: CI de Exemplo
 on: [push]
 
 jobs:
-build:
-runs on: ubuntu-latest
-steps:
-- uses: actions/checkout@v4
-- run: node teste.js
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node teste.js
