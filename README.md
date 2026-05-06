@@ -85,6 +85,7 @@ produção).
 .github/
   workflows/
     build.yml
+    deploy.yml
     ci.yml
     main.yml
 
@@ -93,15 +94,21 @@ produção).
 ## Estrutura do Projeto>
 
 projeto-ci-cd/
-  css/
-    style.css
-  index.html
-  teste.js
+  public/
+    img/
+    css/
+      style.css
+    index.html
+    teste.js
   README.md
 
   .github/
     workflows/
-      pipeline.yml
+      build.yml
+      deploy.yml
+      ci.yml
+      main.yml
+
 
 ------------------------------------------------------------------------
 
