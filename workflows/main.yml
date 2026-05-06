@@ -6,4 +6,4 @@ build:
 runs on: ubuntu-latest
 steps:
 - uses: actions/checkout@v4
-- run: node teste.jobs
+- run: node teste.js
