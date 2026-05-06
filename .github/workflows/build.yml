@@ -1,0 +1,35 @@
+name: CI-CD simples
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v5
+
+      - name: Build
+        run: |
+          mkdir -p dist
+          cp index.html dist/
+          cp style.css dist/ || true
+
+      - name: Teste simples
+        run: |
+          test -f dist/index.html
+          echo "Teste OK: index.html encontrado"
+
+      - name: Upload do artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: .
+          #path: dist
+
+      - name: Deploy simulado
+        run: |
+          echo "Deploy concluído com sucesso"
