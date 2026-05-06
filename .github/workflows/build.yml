@@ -15,8 +15,9 @@ jobs:
       - name: Build
         run: |
           mkdir -p dist
-          cp index.html dist/
-          cp style.css dist/ || true
+          cp public/index.html dist/
+          cp -r public/css/style.css dist/ || true
+          cp -r public/img dist/
 
       - name: Teste simples
         run: |
